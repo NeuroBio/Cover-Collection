@@ -1,2 +1,11 @@
-<h1>Put code here</h1>
-<p *ngFor="let user of users">{{ user.name }}</p>
+<header>
+	<h1>{{ title }}</h1>
+</header>
+
+<nav>
+	<a class="link-button" routerLink="/">All Covers</a>
+	<a class="link-button" routerLink="/add">Add</a>
+</nav>
+<hr>
+
+<router-outlet></router-outlet>
