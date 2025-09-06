@@ -21,7 +21,7 @@ const MockApi: SQLInterface = {
 		let result: any[] = [];
 		switch (true) {
 			case /FROM Covers/.test(params.query):
-				result = [MockCover]
+				result = [1,2,3].map((id) => ({ ...MockCover, id }))
 				break;
 				
 		}

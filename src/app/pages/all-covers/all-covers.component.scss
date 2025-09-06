@@ -1,8 +1,6 @@
 table {
 	font-size: 12pt;
-    border-collapse: separate;
-	border: 1px solid grey;
-	border-radius: .5em;
+	border-collapse: collapse;
 }
 
 td, td {
@@ -10,8 +8,8 @@ td, td {
 	line-height: 1.5em;
 }
 
-tr {
-	border-bottom: 1px solid grey;
+tr:nth-of-type(even) {
+	background-color: rgb(229, 235, 253);
 }
 
 #search {
@@ -20,4 +18,10 @@ tr {
 
 .link-button {
 	font-size: 12pt;
+}
+
+#search-button {
+	font-size: 10pt;
+	padding: .2em;
+	font-weight: bold;
 }
