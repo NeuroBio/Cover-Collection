@@ -1,4 +1,5 @@
 	import { Component, OnInit } from '@angular/core';
+import { Cover } from 'src/app/infrastructure/Repos/cover';
 import { SqlService } from 'src/app/infrastructure/sql.service';
 
 @Component({
@@ -7,21 +8,21 @@ import { SqlService } from 'src/app/infrastructure/sql.service';
 	styleUrl: './all-covers.component.scss'
 })
 	export class AllCoversComponent implements OnInit{
-	users: any[] = [];
+	covers: Cover[] = [];
 
 	constructor (private sqlService: SqlService) {}
 
 	ngOnInit(): void {
-		this.getUsers();
+		this.getCovers();
 	}
 
-	private async getUsers() {
+	private async getCovers() {
 		try {
-			const users = await this.sqlService.invoke('db-query', 'SELECT * FROM Users');
-			console.log('Users:', users);
-			this.users = users;
+			const covers = await this.sqlService.invoke('db-query', 'SELECT * FROM Covers');
+			console.log('Covers:', covers);
+			this.covers = covers;
 		} catch (error) {
-			console.error('Error fetching users:', error);
+			console.error('Error fetching covers:', error);
 		}
 	}
 }

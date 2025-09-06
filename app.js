@@ -1,7 +1,7 @@
-const { app, ipcMain, BrowserWindow } = require("electron");
-const url = require("url");
-const path = require("path");
-const fs = require("fs");
+const { app, ipcMain, BrowserWindow } = require('electron');
+const url = require('url');
+const path = require('path');
+const fs = require('fs');
 const sqlite3 = require('sqlite3').verbose();
 
 
@@ -22,18 +22,18 @@ function createWindow() {
     mainWindow.loadURL(
         url.format({
             pathname: path.join(__dirname, `/dist/cover-collection/index.html`),
-            protocol: "file:",
+            protocol: 'file:',
             slashes: true,
         })
     );
 
-    mainWindow.on("closed", () => mainWindow = null);
+    mainWindow.on('closed', () => mainWindow = null);
 }
 
-app.on("ready", createWindow);
+app.on('ready', createWindow);
 
 
-app.on("activate", () => {
+app.on('activate', () => {
     if (mainWindow === null) {
         createWindow();
     }
@@ -49,11 +49,29 @@ let db = new sqlite3.Database('./database/cover-collection.db', (err) => {
     } else {
         console.log('Connected to SQLite database.');
         // Example: Create a table if it doesn't exist
-        db.run("CREATE TABLE IF NOT EXISTS Users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT)");
-        db.all("SELECT * FROM Users LIMIT 1", [], (err, res) => {
+        db.run(`CREATE TABLE IF NOT EXISTS Covers (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT,
+            year NUMBER,
+            origin TEXT,
+            destination TEXT
+        )`);
+        db.run(`
+            CREATE TABLE IF NOT EXISTS Stamps (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            cover_id INTEGER,
+            scott_catalogue_number TEXT,
+            FOREIGN KEY (cover_id) REFERENCES Covers(id)
+        )`);
+
+        db.all(`SELECT * FROM Covers LIMIT 1`, [], (err, res) => {
             console.log(JSON.stringify(res));
             if (!res?.length) {
-                db.run("INSERT INTO Users (name) VALUES ('stamp-man');")
+                db.run(`
+                    INSERT INTO Covers
+                    (name, year, origin, destination)
+                    VALUES ('Cow Cover', 1876, 'A Field', 'Another Field');
+                `)
             }
         });
     }
@@ -71,8 +89,8 @@ ipcMain.handle('db-query', async (event, query, params = []) => {
     });
 });
 
-app.on("window-all-closed", () => {
-    if (process.platform !== "darwin") {
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
         db.close();
         app.quit();
     }

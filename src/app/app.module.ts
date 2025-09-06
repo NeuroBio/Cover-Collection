@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddCoverComponent } from './pages/add-cover/add-cover.component';
 import { AllCoversComponent } from './pages/all-covers/all-covers.component';
+import { EditCoverComponent } from './pages/edit-cover/edit-cover.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		AllCoversComponent,
 		AddCoverComponent,
+		EditCoverComponent,
 	],
 	imports: [
 		BrowserModule,
