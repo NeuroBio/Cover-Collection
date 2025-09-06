@@ -1,2 +1,27 @@
-Covers
-<p *ngFor="let cover of covers">{{ cover | json }}</p>
+<h2>All Covers</h2>
+
+<section id="search">
+	<p>
+		Imagine a search interface here...
+	</p>
+	<button>Search</button>
+</section>
+
+<table>
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Year</th>
+		<th>Origin</th>
+		<th>Destination</th>
+		<th>View Details</th>
+	</tr>
+	<tr *ngFor="let cover of covers">
+		<td>{{ cover.id }}</td>
+		<td>{{ cover.name }}</td>
+		<td>{{ cover.year }}</td>
+		<td>{{ cover.origin }}</td>
+		<td>{{ cover.destination }}</td>
+		<td>not yet added!</td>
+	</tr>
+</table>
