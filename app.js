@@ -43,7 +43,7 @@ if (!fs.existsSync('./database')) {
     fs.mkdirSync('./database');
 }
 
-let db = new sqlite3.Database('./database/cover-Database.db', (err) => {
+let db = new sqlite3.Database('./database/cover-database.db', (err) => {
     if (err) {
         console.error('Error connecting to database:', err.message);
     } else {

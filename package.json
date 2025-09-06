@@ -1,6 +1,6 @@
 {
   "name": "cover-database",
-  "description": "An app for philatelists (AKA stamp geeks) to document, organize, and locate items in their wayward cover Database.",
+  "description": "An app for philatelists (AKA stamp geeks) to document, organize, and locate items in their wayward cover collection.",
   "author": "NeuroBio@GitHub",
   "version": "0.0.0",
   "main": "app.js",
