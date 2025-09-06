@@ -21,7 +21,7 @@ function createWindow() {
 
     mainWindow.loadURL(
         url.format({
-            pathname: path.join(__dirname, `/dist/cover-collection/index.html`),
+            pathname: path.join(__dirname, `/dist/cover-database/index.html`),
             protocol: 'file:',
             slashes: true,
         })
@@ -43,7 +43,7 @@ if (!fs.existsSync('./database')) {
     fs.mkdirSync('./database');
 }
 
-let db = new sqlite3.Database('./database/cover-collection.db', (err) => {
+let db = new sqlite3.Database('./database/cover-Database.db', (err) => {
     if (err) {
         console.error('Error connecting to database:', err.message);
     } else {

@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Cover-Collection'`, () => {
+  it(`should have as title 'Cover-Database'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Cover-Collection');
+    expect(app.title).toEqual('Cover-Database');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Cover-Collection app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Cover-Database app is running!');
   });
 });
