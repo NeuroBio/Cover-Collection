@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, ipcMain, BrowserWindow } = require("electron");
 const url = require("url");
 const path = require("path");
 const sqlite3 = require('sqlite3').verbose();
@@ -48,4 +48,16 @@ app.on("activate", function () {
         // Example: Create a table if it doesn't exist
         db.run("CREATE TABLE IF NOT EXISTS Users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT)");
     }
+});
+
+ipcMain.handle('db-query', async (event, query, params = []) => {
+    return new Promise((resolve, reject) => {
+        db.all(query, params, (err, rows) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(rows);
+            }
+        });
+    });
 });
