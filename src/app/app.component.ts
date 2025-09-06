@@ -16,6 +16,7 @@ const ipcRenderer: IpcRenderer = window.require('electron').ipcRenderer;
 })
 export class AppComponent implements OnInit {
   title = 'Cover-Collection';
+  users: any[] = [];
 
   ngOnInit(): void {
     this.getUsers();
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit {
         try {
             const users = await ipcRenderer.invoke('db-query', 'SELECT * FROM Users');
             console.log('Users:', users);
+            this.users = users;
         } catch (error) {
             console.error('Error fetching users:', error);
         }
