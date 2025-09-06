@@ -40,7 +40,7 @@ app.on("activate", function () {
     if (mainWindow === null) createWindow();
 });
 
- let db = new sqlite3.Database('./your_database_file.db', (err) => {
+ let db = new sqlite3.Database('./cover-collection.db', (err) => {
     if (err) {
         console.error('Error connecting to database:', err.message);
     } else {
