@@ -2,3 +2,18 @@
 h2 {
 	font-size: 16pt;
 }
+
+.link-button {
+	line-height: 1.5;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	color: black;
+	text-decoration: none;
+	padding: .2em .5em;
+	background-color: rgb(223, 223, 223);
+	border-radius: .5em;
+
+	&:hover, &:focus, &:active {
+		background-color: rgb(167, 167, 167);
+	}
+}

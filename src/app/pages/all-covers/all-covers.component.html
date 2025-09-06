@@ -14,7 +14,7 @@
 		<th>Year</th>
 		<th>Origin</th>
 		<th>Destination</th>
-		<th>View Details</th>
+		<th>Details</th>
 	</tr>
 	<tr *ngFor="let cover of covers">
 		<td>{{ cover.id }}</td>
@@ -22,6 +22,8 @@
 		<td>{{ cover.year }}</td>
 		<td>{{ cover.origin }}</td>
 		<td>{{ cover.destination }}</td>
-		<td>not yet added!</td>
+		<td>
+			<a class="link-button" routerLink="none">View</a>
+		</td>
 	</tr>
 </table>

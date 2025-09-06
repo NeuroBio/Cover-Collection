@@ -9,25 +9,7 @@ nav {
 	gap: .5em;
 }
 
-.link-button {
-	line-height: 1.5;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14pt;
-	color: black;
-	text-decoration: none;
-	padding: .2em .5em;
-	background-color: rgb(223, 223, 223);
-	border-radius: .5em;
-
-	&:hover {
-		background-color: rgb(133, 133, 133);
-	}
-
-	&:active {
-		background-color: rgb(80, 80, 80);
-	}
-}
-
 .selected {
-	background-color: rgb(165, 165, 165);
+	background-color: rgb(156, 155, 228);
+	cursor: default;
 }
