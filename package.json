@@ -1,9 +1,12 @@
 {
   "name": "cover-collection",
   "version": "0.0.0",
+  "main": "app.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "electron": "ng build --base-href ./ && electron .",
+    "electron-reload": "electron .",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -27,6 +30,7 @@
     "@angular/cli": "^16.2.16",
     "@angular/compiler-cli": "^16.2.0",
     "@types/jasmine": "~4.3.0",
+    "electron": "^38.0.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
