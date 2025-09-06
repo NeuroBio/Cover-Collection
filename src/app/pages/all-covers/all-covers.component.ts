@@ -1,6 +1,6 @@
-	import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cover } from 'src/app/infrastructure/Repos/cover';
-import { SqlService } from 'src/app/infrastructure/sql.service';
+import { CoverRepo } from 'src/app/infrastructure/Repos/cover-repo';
 
 @Component({
 	selector: 'app-all-covers',
@@ -10,19 +10,9 @@ import { SqlService } from 'src/app/infrastructure/sql.service';
 	export class AllCoversComponent implements OnInit{
 	covers: Cover[] = [];
 
-	constructor (private sqlService: SqlService) {}
+	constructor (private coverRepo: CoverRepo) {}
 
-	ngOnInit(): void {
-		this.getCovers();
-	}
-
-	private async getCovers() {
-		try {
-			const covers = await this.sqlService.invoke('db-query', 'SELECT * FROM Covers');
-			console.log('Covers:', covers);
-			this.covers = covers;
-		} catch (error) {
-			console.error('Error fetching covers:', error);
-		}
+	async ngOnInit(): Promise<void> {
+		this.covers = await this.coverRepo.all();
 	}
 }
