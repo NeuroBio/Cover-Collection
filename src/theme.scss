@@ -1,0 +1,91 @@
+@use '@angular/material' as mat;
+
+// Be sure that you only ever include 'mat-core' mixin once!
+// it should not be included for each theme.
+@include mat.core();
+$black-overlay: rgba(0, 0, 0, 0.87);
+
+$stamp-blue: (
+    50: #e4f2fb, //1
+    100: #bcdef7, //2
+    200: #93caf2,
+    300: #6bb4ed,
+    400: #4da5ea, //3
+    500: #2f96e8,
+    600: #2988db,
+    700: #2176c8, //4
+    800: #1a66b7,
+    900: #094899,
+    A100: #e4f2fb, //1
+    A200: #bcdef7, //2
+    A400: #4da5ea, //3
+    A700: #2176c8, //4
+    contrast: (
+        50: $black-overlay,
+        100: $black-overlay,
+        200: $black-overlay,
+        300: $black-overlay,
+        400: $black-overlay,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-overlay,
+        A200: $black-overlay,
+        A400: $black-overlay,
+        A700: white,
+    )
+);
+
+$stamp-green: (
+    50: #e3fbf1, //1
+    100: #baf4dc, //2
+    200: #87edc6,
+    300: #38e6ae,
+    400: #00de9b, //3
+    500: #00d588,
+    600: #00c47c,
+    700: #00b16d, //4
+    800: #009f60,
+    900: #007d48,
+    A100: #e3fbf1, //1
+    A200: #baf4dc, //2
+    A400: #00de9b, //3
+    A700: #00b16d, //4
+    contrast: (
+        50: $black-overlay,
+        100: $black-overlay,
+        200: $black-overlay,
+        300: $black-overlay,
+        400: $black-overlay,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-overlay,
+        A200: $black-overlay,
+        A400: $black-overlay,
+        A700: white,
+    )
+);
+
+
+$primary: mat.define-palette($stamp-blue, 300);
+$accent: mat.define-palette($stamp-green, 300);
+$warn: mat.define-palette(mat.$orange-palette);
+
+$stamp-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+	  warn: $warn
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($stamp-theme);

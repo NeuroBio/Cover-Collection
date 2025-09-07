@@ -3,9 +3,10 @@
 </header>
 
 <nav>
-	<a class="link-button"
+	<a mat-flat-button
 	*ngFor="let link of navLinks"
 	[ngClass]="isSelected(link.route)"
+	[color]="isSelected(link.route) ? 'primary' : 'accent'"
 	[routerLink]="link.route">
 		{{ link.name }}
 	</a>

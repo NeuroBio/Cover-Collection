@@ -1,73 +1,76 @@
 <h2>All Covers</h2>
 
-<section id="search">
-	<p>
-		Imagine a search interface here...
-	</p>
-	<button id="search-button" class="sort-and-filter"
-	(click)="search()"
-	>
-		<i class="fa-solid fa-magnifying-glass"></i>
-		&nbsp;Search
-	</button>
+<div class="frame">
+	<section id="search">
+		<p>
+			Imagine a search interface here...
+		</p>
+		<button id="search-button" class="sort-and-filter"
+		(click)="search()"
+		>
+			<i class="fa-solid fa-magnifying-glass"></i>
+			&nbsp;Search
+		</button>
 
-	<button id="unsort" class="sort-and-filter"
-	(click)="unsort()"
-	>
-		<i class="fa-solid fa-xmark"></i>
-		&nbsp;Unsort
-	</button>
-</section>
+		<button id="unsort" class="sort-and-filter"
+		(click)="unsort()"
+		>
+			<i class="fa-solid fa-xmark"></i>
+			&nbsp;Unsort
+		</button>
+	</section>
 
-<table>
-	<tr>
-		<th>
-			Id
-			<app-sort-button #sort
-			fieldName="id"
-			(resort)="resort()"
-			></app-sort-button>
-		</th>
-		<th>
-			Name
-			<app-sort-button #sort
-			fieldName="name"
-			(resort)="resort()"
-			></app-sort-button>
-		</th>
-		<th>
-			Year
-			<app-sort-button #sort
-			fieldName="year"
-			(resort)="resort()"
-			></app-sort-button>
-		</th>
-		<th>
-			Origin
-			<app-sort-button #sort
-			fieldName="origin"
-			(resort)="resort()"
-			></app-sort-button>
-		</th>
-		<th>
-			Destination
-			<app-sort-button #sort
-			fieldName="destination"
-			(resort)="resort()"
-			></app-sort-button>
-		</th>
-		<th>Details</th>
-	</tr>
-	<tr *ngFor="let cover of covers">
-		<td>{{ cover.id }}</td>
-		<td>{{ cover.name }}</td>
-		<td>{{ cover.year }}</td>
-		<td>{{ cover.origin }}</td>
-		<td>{{ cover.destination }}</td>
-		<td>
-			<a class="link-button" routerLink="none">
-				<i class="fa-solid fa-eye"></i>
-			</a>
-		</td>
-	</tr>
-</table>
+	<table>
+		<tr>
+			<th>
+				Id
+				<app-sort-button #sort
+				fieldName="id"
+				(resort)="resort()"
+				></app-sort-button>
+			</th>
+			<th>
+				Name
+				<app-sort-button #sort
+				fieldName="name"
+				(resort)="resort()"
+				></app-sort-button>
+			</th>
+			<th>
+				Year
+				<app-sort-button #sort
+				fieldName="year"
+				(resort)="resort()"
+				></app-sort-button>
+			</th>
+			<th>
+				Origin
+				<app-sort-button #sort
+				fieldName="origin"
+				(resort)="resort()"
+				></app-sort-button>
+			</th>
+			<th>
+				Destination
+				<app-sort-button #sort
+				fieldName="destination"
+				(resort)="resort()"
+				></app-sort-button>
+			</th>
+			<th>Details</th>
+		</tr>
+		<tr *ngFor="let cover of covers">
+			<td>{{ cover.id }}</td>
+			<td>{{ cover.name }}</td>
+			<td>{{ cover.year }}</td>
+			<td>{{ cover.origin }}</td>
+			<td>{{ cover.destination }}</td>
+			<td>
+				<a class="icon-button" mat-icon-button routerLink="none">
+					<i class="fa-solid fa-eye"></i>
+				</a>
+			</td>
+		</tr>
+	</table>
+</div>
+

@@ -9,7 +9,7 @@ td, td {
 }
 
 tr:nth-of-type(even) {
-	background-color: rgb(229, 235, 253);
+	background-color: rgb(234, 238, 252);
 }
 
 #search {
@@ -24,4 +24,48 @@ tr:nth-of-type(even) {
 	font-size: 10pt;
 	padding: .2em;
 	font-weight: bold;
+}
+
+a {
+	display: flex;
+	justify-content: center;
+	color: white;
+	background-color: rgb(158, 211, 247);
+	font-size: 16pt;
+	margin: .2em 0;
+		
+	width: 30px !important;
+   	height: 30px !important;
+   	padding: 0px !important;
+   	display: inline-flex !important;
+   	align-items: center;
+   	justify-content: center;
+
+	&:hover {
+		background-color: rgb(122, 196, 245);
+	}
+
+	& > *[role=img] {
+		width: 20px;
+		height: 20px;
+		font-size: 20px;
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	.mat-mdc-button-touch-target {
+		width: 24px !important;
+		height: 24px !important;
+	}
+}
+
+.frame {
+	margin-left: 2em;
+}
+
+app-sort-button {
+	margin-right: .3em;
 }

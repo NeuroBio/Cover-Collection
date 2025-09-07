@@ -1,30 +1,32 @@
 <h2>Add New Cover</h2>
 
 <form [formGroup]="form">
-	<p>
-		<label for="cover-name">Name</label>
-		<input id="cover-name" type="test" formControlName="name">
-	</p>
+	<mat-form-field>
+		<mat-label for="cover-name">Name</mat-label>
+		<input matInput id="cover-name" type="test" formControlName="name">
+	</mat-form-field><br>
 
-	<p>
-		<label for="cover-year">Year</label>
-		<input id="cover-year" type="number" step="1" formControlName="year">
-	</p>
+	<mat-form-field>
+		<mat-label for="cover-year">Year</mat-label>
+		<input matInput id="cover-year" type="number" step="1" formControlName="year">
+	</mat-form-field><br>
 
-	<p>
-		<label for="cover-origin">Origin</label>
-		<input id="cover-origin" type="text" step="1" formControlName="origin">
-	</p>
+	<mat-form-field>
+		<mat-label for="cover-origin">Origin</mat-label>
+		<input matInput id="cover-origin" type="text" step="1" formControlName="origin">
+	</mat-form-field>
 
-	<p>
-		<label for="cover-destination">Destination</label>
-		<input id="cover-destination" type="text" step="1" formControlName="destination">
-	</p>
+	<mat-form-field>
+		<mat-label for="cover-destination">Destination</mat-label>
+		<input matInput id="cover-destination" type="text" step="1" formControlName="destination">
+	</mat-form-field><br>
 
 	<button
+		mat-flat-button
+		color="primary"
 		type="submit"
 		(click)="save()"
 		[disabled]="processing"
-		>Save</button>
+	>Save</button>
 
 </form>
