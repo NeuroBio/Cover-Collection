@@ -33,7 +33,8 @@ export class EndpointsService {
 	}
 
 	async saveNewCover (newCover: CoverForm): Promise<void> {
-		return await this.coverRepo.upsert(newCover).then(() => {
+		return await this.coverRepo.upsert(newCover)
+			.then(() => {
 				this.snackBar.open(
 					`Cover saved!`,
 					'Okay',
@@ -42,8 +43,13 @@ export class EndpointsService {
 						duration: 3000,
 					},
 				);
-
-		});
+			}).catch((ignore) => {
+				this.snackBar.open(
+					`Failed to save cover.`,
+					'Okay',
+					{ panelClass: [SnackBarClass.ERROR] }
+				);
+			});
 	}
 
 	openDevTools (): void {

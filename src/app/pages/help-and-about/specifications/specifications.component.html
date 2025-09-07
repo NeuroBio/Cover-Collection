@@ -1,1 +1,158 @@
-<p>specifications works!</p>
+<h4>App Header</h4>
+<ul>
+	<li>Has a title: "<i>Cover Database</i>"</li>
+	<li>Has a nav bar</li>
+	<ul>
+		<li>Links are highlighted when selected</li>
+		<li>"<i>All Covers</i>" leads to the view and search page</li>
+		<li>"<i>Add</i>" leads to the add cover page</li>
+		<li>"<i>Help</i>" leads to the help page</li>
+	</ul>
+</ul>
+
+<h4>Page "<i>All Covers</i>"</h4>
+<ul>
+	<li>Has a title: "<i>All Covers</i>"</li>
+	<li>Includes a "<i>Search</i>"" button</li>
+		<ul>
+			<li>When clicked, does nothing</li>
+		</ul>
+	<li>Includes an "<i>Unsort</i>"" button</li>
+		<ul>
+			<li>When clicked, reverts covers to original sortation</li>
+			<li>When clicked, sets all header sorters to unsorted state</li>
+		</ul>
+	<li>Includes a table of Covers</li>
+	<ul>
+		<li>Column with Title "<i>Id</i>"</li>
+		<ul>
+			<li>is sortable</li>
+			<li>Each row has the Cover Id</li>
+		</ul>
+		<li>Column with Title "<i>Name</i>"</li>
+			<ul>
+				<li>is sortable</li>
+				<li>Each row has the Cover Name</li>
+			</ul>
+		<li>Column with Title "<i>Year</i>"</li>
+			<ul>
+				<li>is sortable</li>
+				<li>Each row has the Cover Year</li>
+			</ul>
+		<li>Column with Title "<i>Origin</i>"</li>
+			<ul>
+				<li>is sortable</li>
+				<li>Each row has the Cover Origin</li>
+			</ul>
+		<li>Column with Title "<i>Destination</i>"</li>
+			<ul>
+				<li>is sortable</li>
+				<li>Each row has the Cover Destination</li>
+			</ul>
+		<li>Column with Title "<i>Details</i>"</li>
+			<ul>
+				<li>is not sortable</li>
+				<li>Each row has a view details button</li>
+				<ul>
+					<li>When clicked, does nothing</li>
+				</ul>
+			</ul>
+		</ul>
+	<li>Sort buttons</li>
+	<ul>
+		<li>Have 3 states</li>
+		<ul>
+			<li>Unsorted (grey up and down arrows)</li>
+			<li>Sort Ascending (blue up arrow)</li>
+			<li>Sort Descending (blue down arrow)</li>
+		</ul>
+		<li>Begin in Unsorted state</li>
+		<li>First click moves to Ascending Sort State</li>
+		<li>Second click moves to Descending Sort State</li>
+		<li>Third click returns to Unsorted State</li>
+		<li>Sorts are applied from left to right</li>
+		<ul>
+			<li>E.g. If Id and Year are sorted Ascending, the data is first sorted by Id, then resorted by Year.  Year will be the main sort since it was used last.</li>
+		</ul>
+	</ul>
+	<li>On Load, gets all cover data from the database.</li>
+	<ul>
+		<li>If load fails, it</li>
+		<ul>
+			<li>returns no covers</li>
+			<li>Displays an error toast that covers could not be loaded</li>
+			<li>Logs the real error and query to the console</li>
+		</ul>
+	</ul>
+</ul>
+
+<h4>Page "<i>Add</i>"</h4>
+<ul>
+	<li>Has a title: "<i>Add New Cover</i>"</li>
+	<li>Has a Cover Form</li>
+	<ul>
+		<li>"<i>Name</i>" field is required text entry</li>
+		<li>"<i>Year</i>" field is non-required number entry</li>
+		<li>"<i>Origin</i>" field is a non-required text entry</li>
+		<li>"<i>Destination</i>" field is a non-required text entry</li>
+	</ul>
+	<li>Has a save button</li>
+	<ul>
+		<li>When clicked, it adds the form data to the database as a new Cover</li>
+		<li>Is disabled when form is invalid</li>
+		<li>Is disabled while processing a save</li>
+		<li>A progress spinner shows while processing</li>
+		<li>On success, a message toast displays</li>
+		<li>On Failure, an error toast displays</li>
+	</ul>
+	<li>If the form has been touched and not submitted, and the user tries to navigate to another page the user is prompted</li>
+	<li>Cover Form is cleared and reset when loading the page</li>
+	<ul>
+		<li>Prompt warns about lost progress</li>
+		<li>Prompt has "<i>No</i>" button</li>
+		<ul>
+			<li>Prompt defaults focus to "<i>No</i>" button</li>
+			<li>"<i>No</i>" button stops navigation</li>
+			<li>"<i>No</i>" button closes prompt</li>
+		</ul>
+		<li>Prompt has "<i>yes</i>" button</li>
+		<ul>
+			<li>"<i>Yes</i>" button continues navigation</li>
+			<li>"<i>Yes</i>" button closes prompt</li>
+		</ul>
+	</ul>
+	<li>On Load, does nothing</li>
+</ul>
+
+<h4>Page "<i>Help</i>"</h4>
+<ul>
+	<li>Has a title: "<i>Help Topics</i>"</li>
+	<li>Has an "<i>Open Console</i>"" button that opens dev tools</li>
+	<li>has sections that are revealed when clicked on</li>
+	<ul>
+		<li>"<i>Specifications</i>" explains what behavior to expect on every page</li>
+		<li>"<i>Specifications</i>" is open by default</li>
+		<li>"<i>Is it really "Broken"?</i>" includes a rant about bugs vs. features</li>
+		<li>Selected section is highlighted in a different color</li>
+	</ul>
+	<li>On Load, does nothing</li>
+	<li>Has no Submit</li>
+</ul>
+
+<h4>Toasts (Shared)</h4>
+<ul>
+	<li>Message Toast</li>
+	<ul>
+		<li>Has a blue background</li>
+		<li>Has an "<i>Okay</i>" button to dismiss itself on click</li>
+		<li>Auto dismisses after 3 seconds</li>
+	</ul>
+	<li>Error Toast</li>
+	<ul>
+		<li>Has a yellow background</li>
+		<li>Has an "<i>Okay</i>" button to dismiss itself on click</li>
+		<li>Never auto dismisses</li>
+	</ul>
+	<li>Only one toast persists at a time</li>
+	<li>New toasts replace old toasts</li>
+</ul>
