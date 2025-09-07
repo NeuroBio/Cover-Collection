@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SqlService } from '../sql.service';
-import { Cover } from './cover';
+import { Cover } from '../../types-and-enums/cover';
 
 const Table = 'Covers';
 export enum CoverField {

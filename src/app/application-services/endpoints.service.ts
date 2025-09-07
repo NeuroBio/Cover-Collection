@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CoverRepo } from '../infrastructure/Repos/cover-repo';
-import { Cover } from '../infrastructure/Repos/cover';
 import { CoverForm } from '../pages/add-cover/cover-form.service';
+import { Cover } from '../types-and-enums';
 
 @Injectable({
   providedIn: 'root'

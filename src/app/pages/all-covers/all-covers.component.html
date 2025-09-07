@@ -4,19 +4,58 @@
 	<p>
 		Imagine a search interface here...
 	</p>
-	<button id="search-button">
+	<button id="search-button" class="sort-and-filter"
+	(click)="search()"
+	>
 		<i class="fa-solid fa-magnifying-glass"></i>
 		&nbsp;Search
+	</button>
+
+	<button id="unsort" class="sort-and-filter"
+	(click)="unsort()"
+	>
+		<i class="fa-solid fa-xmark"></i>
+		&nbsp;Unsort
 	</button>
 </section>
 
 <table>
 	<tr>
-		<th>Id</th>
-		<th>Name</th>
-		<th>Year</th>
-		<th>Origin</th>
-		<th>Destination</th>
+		<th>
+			Id
+			<app-sort-button #sort
+			fieldName="id"
+			(resort)="resort()"
+			></app-sort-button>
+		</th>
+		<th>
+			Name
+			<app-sort-button #sort
+			fieldName="name"
+			(resort)="resort()"
+			></app-sort-button>
+		</th>
+		<th>
+			Year
+			<app-sort-button #sort
+			fieldName="year"
+			(resort)="resort()"
+			></app-sort-button>
+		</th>
+		<th>
+			Origin
+			<app-sort-button #sort
+			fieldName="origin"
+			(resort)="resort()"
+			></app-sort-button>
+		</th>
+		<th>
+			Destination
+			<app-sort-button #sort
+			fieldName="destination"
+			(resort)="resort()"
+			></app-sort-button>
+		</th>
 		<th>Details</th>
 	</tr>
 	<tr *ngFor="let cover of covers">

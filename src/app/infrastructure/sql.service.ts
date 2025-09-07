@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MockCover } from './mocks';
+import { MockCovers } from './mocks';
 
 interface InvokeParams {
 	event: string;
@@ -21,7 +21,7 @@ const MockApi: SQLInterface = {
 		let result: any[] = [];
 		switch (true) {
 			case /FROM Covers/.test(params.query):
-				result = [1,2,3].map((id) => ({ ...MockCover, id }))
+				result = MockCovers;
 				break;
 				
 		}

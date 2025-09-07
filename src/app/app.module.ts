@@ -7,13 +7,19 @@ import { AddCoverComponent } from './pages/add-cover/add-cover.component';
 import { AllCoversComponent } from './pages/all-covers/all-covers.component';
 import { EditCoverComponent } from './pages/edit-cover/edit-cover.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SortButtonComponent } from './components/sort-button/sort-button.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
+		
+		// pages
 		AllCoversComponent,
 		AddCoverComponent,
 		EditCoverComponent,
+
+		// components
+		SortButtonComponent,
 	],
 	imports: [
 		BrowserModule,
