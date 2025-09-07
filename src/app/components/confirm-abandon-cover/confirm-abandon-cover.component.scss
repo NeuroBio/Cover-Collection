@@ -1,0 +1,15 @@
+p {
+	font-size: 12pt;
+	max-width: 400px;
+	padding: 0 1em;
+}
+
+.question {
+	text-align: center;
+}
+
+.button-box {
+	display: flex;
+	justify-content: center;
+	gap: 1em;
+}

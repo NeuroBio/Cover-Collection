@@ -15,10 +15,12 @@ import { SortButtonComponent } from './components/sort-button/sort-button.compon
 // Materials
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ConfirmAbandonCoverComponent } from './components/confirm-abandon-cover/confirm-abandon-cover.component';
 
 @NgModule({
 	declarations: [
@@ -31,12 +33,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 		// components
 		SortButtonComponent,
+		ConfirmAbandonCoverComponent,
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		ReactiveFormsModule,
 		MatButtonModule,
+		MatDialogModule,
 		MatFormFieldModule,
 		MatInputModule,
 		MatSnackBarModule,
