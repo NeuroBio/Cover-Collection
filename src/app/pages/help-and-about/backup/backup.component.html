@@ -1,0 +1,44 @@
+<h4>How and where does this app store data?</h4>
+<p>
+	This app stores the data in a Relational Database called SQLite.
+	Ultimately, it's a single file that lives on your machine.
+	You can find it in the app's folder at <code>database/cover-database.db</code>.
+	Relational databases are far more powerful than a spreadsheet.
+	It's why one-to-many relationships (e.g. one Cover to many Stamps) are
+	hard to record in Excel, but easy to manage in this app.
+</p>
+<img src="./assets/images/where-is-the-data.jpg" alt="Screenshot of the database file in the folder structure.">
+
+<h4>How do I upgrade to a new app version correctly?</h4>
+<p>
+	Every time you take a new version, it's a separately packaged application.
+	The application expects a database to exist at <code>database/cover-database.db</code>.
+	If it cannot find it, it makes that folder and file when the app loads.
+	In other words, <b>the new app version knows nothing about your old data.</b>
+	This is easy to solve:
+	simply copy the database folder from your old app version into the new app version.
+</p>
+
+<h4>How do I back up my data?</h4>
+<p>
+	Although the file type used by SQLite is very different from an Excel spreadsheet,
+	that doesn't mean backups are hard or that your data will be tied to this app.
+	You can make a copy of the <code>cover-database.db</code> file to store as a backup.
+</p>
+
+<h4>How do I view my data outside of the app?</h4>
+<p>
+	To look at your data outside of the app,
+	google "SQLite Viewer" and choose a program that suits you.
+	Personally, I'm using VSCode with the SQLite Viewer extension by Florian Klampfer.
+</p>
+<img src="./assets/images/viewer-example.jpg" alt="Screenshot of the database file viewed in VSCode with the SQLite Viewer extension.">
+
+<h4>But I still want Excel Data...</h4>
+<p>
+	If needed, I can add a way to convert the individual SQLite tables
+	into comma-separated values (<code>.csv</code>) files.
+	Excel CAN read <code>.csv</code> files directly.
+	However, you'll want to resave <code>.csv</code> data as an Excel file.
+	Otherwise, any formatting and equations you add to the .csv file in Excel will be lost when you close excel.
+</p>

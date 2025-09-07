@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { EndpointsService } from 'src/app/application-services/endpoints.service';
 import { SpecificationsComponent } from './specifications/specifications.component';
 import { NotBrokenComponent } from './not-broken/not-broken.component';
+import { BackupComponent } from './backup/backup.component';
 
 interface Entry {
 	name: string;
@@ -17,8 +18,13 @@ export class HelpAndAboutComponent {
 
 	entries: Entry[] = [
 		{
-			name: 'Specifications',
+			name: 'Owner Manual',
 			isSelected: true,
+			component: BackupComponent,
+		},
+		{
+			name: 'Specifications',
+			isSelected: false,
 			component: SpecificationsComponent,
 		},
 		{
