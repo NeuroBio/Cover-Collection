@@ -17,6 +17,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
 	declarations: [
@@ -37,6 +38,7 @@ import { MatInputModule } from '@angular/material/input';
 		MatButtonModule,
 		MatFormFieldModule,
 		MatInputModule,
+		MatProgressSpinnerModule,
 	],
 	providers: [
     provideAnimationsAsync()

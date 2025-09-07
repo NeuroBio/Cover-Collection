@@ -21,12 +21,19 @@
 		<input matInput id="cover-destination" type="text" step="1" formControlName="destination">
 	</mat-form-field><br>
 
-	<button
-		mat-flat-button
-		color="primary"
-		type="submit"
-		(click)="save()"
-		[disabled]="processing"
-	>Save</button>
+	<div class="side-by-side">
+		<mat-spinner
+			*ngIf="processing"
+			[diameter]="30"
+			[strokeWidth]="4"
+		></mat-spinner>
+		<button
+			mat-flat-button
+			color="primary"
+			type="submit"
+			(click)="save()"
+			[disabled]="processing || form.invalid"
+		>Save</button>
+	</div>
 
 </form>
