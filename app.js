@@ -89,6 +89,18 @@ ipcMain.handle('db-query', async (event, query, params = []) => {
     });
 });
 
+ipcMain.handle('db-insert', async (event, query, params = []) => {
+    return new Promise((resolve, reject) => {
+        db.run(query, params, (err, rows) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(rows);
+            }
+        });
+    });
+});
+
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         db.close();

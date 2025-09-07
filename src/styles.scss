@@ -4,6 +4,24 @@ h2 {
 	font-size: 16pt;
 }
 
+.snackbar-error {
+	--mdc-snackbar-container-color: rgb(236, 212, 130);
+	--mdc-snackbar-supporting-text-color: black;
+	--mat-snack-bar-button-color: black;
+	& .mat-mdc-button {
+		background-color: orange;
+	}
+}
+
+.snackbar-message {
+	--mdc-snackbar-container-color: rgb(180, 239, 243);
+	--mdc-snackbar-supporting-text-color: black;
+	--mat-snack-bar-button-color: black;
+	& .mat-mdc-button {
+		background-color: rgb(134, 212, 243);
+	}
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
