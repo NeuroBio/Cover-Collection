@@ -1,8 +1,25 @@
 <h2>
-	Help
+	Help Topics
 	<button
 		mat-flat-button
 		(click)="openDevTools()"
 	>Open Console</button>
 </h2>
-<h3></h3>
+
+<div class="side-by-side">
+	<ul>
+		<li>
+			<h3>Specifications</h3>
+		</li>
+		<li>
+			<h3>Is it really "broken"?</h3>
+		</li>
+
+	</ul>
+
+	<section id="content">
+		<app-not-broken></app-not-broken>
+	</section>
+</div>
+
+

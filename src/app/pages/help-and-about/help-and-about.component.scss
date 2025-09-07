@@ -2,3 +2,19 @@ h2 {
 	display: flex;
 	justify-content: space-between;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0 0 0 -4em;
+}
+
+.side-by-side {
+	display: flex;
+}
+
+#content {
+	border: solid 1px grey;
+	padding: 0 1em;
+	border-radius: .75em;
+	margin-left: 1em;
+}

@@ -9,6 +9,7 @@ import { AddCoverComponent } from './pages/add-cover/add-cover.component';
 import { AllCoversComponent } from './pages/all-covers/all-covers.component';
 import { EditCoverComponent } from './pages/edit-cover/edit-cover.component';
 import { HelpAndAboutComponent } from './pages/help-and-about/help-and-about.component';
+import { NotBrokenComponent } from './pages/help-and-about/not-broken/not-broken.component';
 
 // Components
 import { SortButtonComponent } from './components/sort-button/sort-button.component';
@@ -32,6 +33,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 		AddCoverComponent,
 		EditCoverComponent,
 		HelpAndAboutComponent,
+		NotBrokenComponent,
 
 		// components
 		SortButtonComponent,
