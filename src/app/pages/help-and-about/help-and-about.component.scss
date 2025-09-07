@@ -6,6 +6,38 @@ h2 {
 ul {
   list-style-type: none;
   margin: 0 0 0 -4em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+li {
+	display: flex;
+}
+
+.side-nav-button {
+	flex-grow: 1;
+	min-height: 50px;
+	background-color: rgb(193, 236, 226);
+	border-radius: 2em 0 0 2em;
+	border: none;
+	padding: 0 1em 0 0;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	&:hover, &:active, &:focus {
+		background-color: rgb(125, 236, 208);
+	}
+}
+
+h3 {
+	flex-grow: 1;
+}
+
+.selected {
+	background-color: rgb(145, 195, 241) !important;
+	cursor: default;
 }
 
 .side-by-side {
@@ -15,6 +47,7 @@ ul {
 #content {
 	border: solid 1px grey;
 	padding: 0 1em;
-	border-radius: .75em;
-	margin-left: 1em;
+	border-radius: 0 .75em .75em .75em;
+	max-width: 500px;
+	font-size: 12pt;
 }

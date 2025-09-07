@@ -8,17 +8,23 @@
 
 <div class="side-by-side">
 	<ul>
-		<li>
-			<h3>Specifications</h3>
+		<li *ngFor="let entry of entries; let i = index">
+			<button
+				class="side-nav-button"
+				(click)="select(i)"
+				[ngClass]="isSelected(i) ? 'selected' : ''"
+			>
+				<h3>{{ entry.name }}</h3>
+			</button>
 		</li>
-		<li>
-			<h3>Is it really "broken"?</h3>
-		</li>
-
 	</ul>
 
 	<section id="content">
-		<app-not-broken></app-not-broken>
+		<div *ngFor="let entry of entries; let i = index">
+			<div *ngIf="isSelected(i)">
+				<ng-container *ngComponentOutlet="entry.component"></ng-container>
+			</div>
+		</div>
 	</section>
 </div>
 
