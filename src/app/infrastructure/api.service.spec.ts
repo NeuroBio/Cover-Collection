@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SqlService } from './sql.service';
+import { ApiService } from './api.service';
 
-describe('SqlService', () => {
-  let service: SqlService;
+describe('ApiService', () => {
+  let service: ApiService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SqlService);
+    service = TestBed.inject(ApiService);
   });
 
   it('should be created', () => {

@@ -39,6 +39,13 @@ app.on('activate', () => {
 	}
 });
 
+app.on('window-all-closed', () => {
+	if (process.platform !== 'darwin') {
+		db.close();
+		app.quit();
+	}
+});
+
 if (!fs.existsSync('./database')) {
 	fs.mkdirSync('./database');
 }
@@ -101,11 +108,8 @@ ipcMain.handle('db-insert', async (event, query, params = []) => {
 	});
 });
 
-app.on('window-all-closed', () => {
-	if (process.platform !== 'darwin') {
-		db.close();
-		app.quit();
-	}
+ipcMain.handle('open-devtools', () => {
+	mainWindow.webContents.openDevTools();
 });
 
 Menu.setApplicationMenu(Menu.buildFromTemplate([]));
