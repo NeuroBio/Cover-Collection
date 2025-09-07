@@ -4,7 +4,7 @@ import { MockCovers } from './mocks';
 interface InvokeParams {
 	event: string;
 	query: string;
-	params?: string[];
+	params?: (string|number)[];
 }
 interface SQLInterface {
 	invoke: (params: InvokeParams) => Promise<any[]>;

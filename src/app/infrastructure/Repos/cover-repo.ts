@@ -21,34 +21,36 @@ export class CoverRepo {
 	async search () {}
 
 	async all (): Promise<Cover[]> {
+		const query = `SELECT * FROM ${Table}`;
 		return this.sqlService.invoke({
 			event: DatabaseEvent.QUERY, 
-			query: `SELECT * FROM ${Table}`,
-		}).catch((err) => this.handleThrow('CoverRepo.all', err));
+			query,
+		}).catch((err) => this.handleThrow('CoverRepo.all', err, query));
 	}
 
 	async upsert (newCover: CoverForm) {
-		return this.sqlService.invoke({
-		event: DatabaseEvent.INSERT, 
-		query: `
-			INSERT INTO ${Table}
+		const query = `INSERT INTO ${Table}
 			(
 			name,
 			year,
 			origin,
 			destination
 			)
-			VALUES (
-			${newCover.name},
-			${newCover.year},
-			${newCover.origin},
-			${newCover.destination}
-			);`,
-		}).catch((err) => this.handleThrow('CoverRepo.upsert', err));
+			VALUES (?,?,?,?);`
+		return this.sqlService.invoke({
+			event: DatabaseEvent.INSERT, 
+			query,
+			params: [
+				newCover.name,
+				newCover.year,
+				newCover.origin,
+				newCover.destination
+			]
+		}).catch((err) => this.handleThrow('CoverRepo.upsert', err, query));
 	}
 
-	private handleThrow (method: string, err: any) {
-		console.log(`${method} failed: ${err.message}`);
+	private handleThrow (method: string, err: any, query: string) {
+		console.log(`${method} failed with error: ${err.message} on query: ${query}`);
 		throw err;
 	}
 
