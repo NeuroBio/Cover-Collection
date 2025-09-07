@@ -37,7 +37,7 @@ const MockApi: ApiInterface = {
 		return Promise.resolve(result);
 	},
 	openDevTools: () => {
-		console.log('You need to build will electron to test this functionality.');
+		console.log('You need to build with electron to test this functionality.');
 	}
 }
 

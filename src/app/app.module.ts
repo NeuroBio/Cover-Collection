@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { AddCoverComponent } from './pages/add-cover/add-cover.component';
 import { AllCoversComponent } from './pages/all-covers/all-covers.component';
 import { EditCoverComponent } from './pages/edit-cover/edit-cover.component';
+import { HelpAndAboutComponent } from './pages/help-and-about/help-and-about.component';
 
 // Components
 import { SortButtonComponent } from './components/sort-button/sort-button.component';
+import { ConfirmAbandonCoverComponent } from './components/confirm-abandon-cover/confirm-abandon-cover.component';
 
 // Materials
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -18,9 +20,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { ConfirmAbandonCoverComponent } from './components/confirm-abandon-cover/confirm-abandon-cover.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
 	declarations: [
@@ -30,6 +31,7 @@ import { ConfirmAbandonCoverComponent } from './components/confirm-abandon-cover
 		AllCoversComponent,
 		AddCoverComponent,
 		EditCoverComponent,
+		HelpAndAboutComponent,
 
 		// components
 		SortButtonComponent,
@@ -43,8 +45,8 @@ import { ConfirmAbandonCoverComponent } from './components/confirm-abandon-cover
 		MatDialogModule,
 		MatFormFieldModule,
 		MatInputModule,
-		MatSnackBarModule,
 		MatProgressSpinnerModule,
+		MatSnackBarModule,
 	],
 	providers: [
     provideAnimationsAsync()

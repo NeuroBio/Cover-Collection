@@ -3,6 +3,7 @@ import { CoverRepo } from '../infrastructure/Repos/cover-repo';
 import { CoverForm } from '../pages/add-cover/cover-form.service';
 import { Cover } from '../types-and-enums';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ApiService } from '../infrastructure/api.service';
 
 enum SnackBarClass {
 	ERROR = 'snackbar-error',
@@ -15,7 +16,8 @@ export class EndpointsService {
 
 	constructor (
 		private snackBar: MatSnackBar,
-		private coverRepo: CoverRepo
+		private coverRepo: CoverRepo,
+		private api: ApiService
 	) { }
 
 	async allCovers (): Promise<Cover[]> {
@@ -42,6 +44,10 @@ export class EndpointsService {
 				);
 
 		});
+	}
+
+	openDevTools (): void {
+		return this.api.openDevTools();
 	}
 
 }

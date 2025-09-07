@@ -15,6 +15,10 @@ const NavLinks: NavLink[] = [
 	{
 		name: 'Add',
 		route: '/add',
+	},
+	{
+		name: 'Help',
+		route: '/help',
 	}
 ]
 @Component({

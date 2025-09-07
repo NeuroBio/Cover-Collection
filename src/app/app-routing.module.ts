@@ -5,6 +5,7 @@ import { AllCoversComponent } from './pages/all-covers/all-covers.component';
 import { EditCoverComponent } from './pages/edit-cover/edit-cover.component';
 import { ViewCoverDetailsComponent } from './pages/view-cover-details/view-cover-details.component';
 import { coverFormTouchedGuard } from './guards/cover-form-touched.guard';
+import { HelpAndAboutComponent } from './pages/help-and-about/help-and-about.component';
 
 const routes: Routes = [
   { path: '', component: AllCoversComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   },
   { path: 'edit', component: EditCoverComponent },
   { path: 'view', component: ViewCoverDetailsComponent },
+  { path: 'help', component: HelpAndAboutComponent },
 ];
 
 @NgModule({
