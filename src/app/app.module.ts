@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AddCoverComponent } from './pages/add-cover/add-cover.component';
 import { AllCoversComponent } from './pages/all-covers/all-covers.component';
 import { EditCoverComponent } from './pages/edit-cover/edit-cover.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -17,6 +18,7 @@ import { EditCoverComponent } from './pages/edit-cover/edit-cover.component';
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
+		ReactiveFormsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

@@ -14,16 +14,14 @@ export enum CoverField {
   providedIn: 'root'
 })
 export class CoverRepo {  
-  constructor(private sqlService: SqlService) {
-
-  }
+  constructor(private sqlService: SqlService) {}
 
   async search () {}
 
   async all (): Promise<Cover[]> {
     const covers = await this.sqlService.invoke({
       event: 'db-query', 
-      query: 'SELECT * FROM Covers',
+      query: `SELECT * FROM ${Table}`,
     }).catch((err) => {
       console.log(`CoverRepo.all failed: ${err.message}`);
       return [];

@@ -1,1 +1,30 @@
 <h2>Add New Cover</h2>
+
+<form [formGroup]="form">
+	<p>
+		<label for="cover-name">Name</label>
+		<input id="cover-name" type="test" formControlName="name">
+	</p>
+
+	<p>
+		<label for="cover-year">Year</label>
+		<input id="cover-year" type="number" step="1" formControlName="year">
+	</p>
+
+	<p>
+		<label for="cover-origin">Origin</label>
+		<input id="cover-origin" type="text" step="1" formControlName="origin">
+	</p>
+
+	<p>
+		<label for="cover-destination">Destination</label>
+		<input id="cover-destination" type="text" step="1" formControlName="destination">
+	</p>
+
+	<button
+		type="submit"
+		(click)="save()"
+		[disabled]="processing"
+		>Save</button>
+
+</form>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SqlService } from 'src/app/infrastructure/sql.service';
+import { CoverFormService } from './cover-form.service';
+import { FormGroup } from '@angular/forms';
+import { EndpointsService } from 'src/app/application-services/endpoints.service';
 
 @Component({
   selector: 'app-add-cover',
@@ -7,10 +9,26 @@ import { SqlService } from 'src/app/infrastructure/sql.service';
   styleUrl: './add-cover.component.scss'
 })
 export class AddCoverComponent implements OnInit {
+	form: FormGroup;
+	processing = false;
 
-	constructor () {}
+	constructor (
+		private coverForm: CoverFormService,
+		private endpoint: EndpointsService
+	) {
+		this.coverForm.resetForm();
+		this.form = this.coverForm.form;
+	}
 
 	ngOnInit(): void {
+
+	}
+
+	async save (): Promise<void> {
+		this.processing = true;
+		const form = this.form.value;
+		this.endpoint.saveNewCover(form)
+			.finally(() => this.processing = false);
 	}
 
 }
