@@ -30,5 +30,6 @@ export class CoverFormService {
 			origin: '',
 			destination: '',
 		});
+		this.form.markAsUntouched();
 	}
 }

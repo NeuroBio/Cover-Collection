@@ -28,6 +28,7 @@ export class AddCoverComponent implements OnInit {
 		this.processing = true;
 		const form = this.form.value;
 		this.endpoint.saveNewCover(form)
+			.then(() => this.coverForm.resetForm())
 			.finally(() => this.processing = false);
 	}
 
