@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { EndpointsService } from 'src/app/application-services/endpoints.service';
 import { SpecificationsComponent } from './specifications/specifications.component';
-import { NotBrokenComponent } from './not-broken/not-broken.component';
 import { BackupComponent } from './backup/backup.component';
 
 interface Entry {
@@ -27,11 +26,6 @@ export class HelpAndAboutComponent {
 			isSelected: false,
 			component: SpecificationsComponent,
 		},
-		{
-			name: 'Is it really "Broken"?',
-			isSelected: false,
-			component: NotBrokenComponent,
-		}
 	];
 
 	constructor (private endpoints: EndpointsService) {}
